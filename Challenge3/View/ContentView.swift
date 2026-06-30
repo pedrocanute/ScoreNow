@@ -11,8 +11,26 @@ import Playgrounds
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+			Tab ("Esportes", systemImage: "soccerball") {
+				NavigationStack{
+					Esportes()
+					
+				}
+			}
+			Tab ("Favoritos", systemImage: "star") {
+				Favoritos()
+			}
+			Tab ("Notícias", systemImage: "newspaper") {
+				Noticias()
+			}
+			Tab ("Perfil", systemImage: "person"){
+				Perfil()
+			}
+        }
+		.tabViewStyle(.automatic)
+		.preferredColorScheme(.dark)
+		
     }
 }
 
