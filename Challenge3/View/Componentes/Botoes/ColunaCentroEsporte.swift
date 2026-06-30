@@ -1,0 +1,24 @@
+//
+//  ColunaBotaoEsporte.swift
+//  Challenge3
+//
+//  Created by Pedro Canute on 30/06/26.
+//
+
+import SwiftUI
+
+struct ColunaCentroEsporte: View {
+	var body: some View {
+		VStack (spacing: 20){
+			BotaoEsporte(titulo: "Futebol", icone: "soccerball") { Futebol () }
+			BotaoEsporte(titulo: "Futebol Americano", icone: "american.football") { Futebol() }
+				.preferredColorScheme(.dark)
+			BotaoEsporte(titulo: "Golfe", icone: "figure.golf") { Futebol() }
+			BotaoEsporte(titulo: "Surf", icone: "figure.surfing") { Futebol() }
+			
+		}
+	}
+}
+#Preview {
+	ColunaCentroEsporte()
+}
