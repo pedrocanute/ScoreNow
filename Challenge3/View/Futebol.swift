@@ -9,7 +9,7 @@ import SwiftUI
 struct Futebol: View {
 	var body: some View {
 		VStack{
-			Spacer()
+			
 			ZStack{
 				Circle()
 					.frame(maxWidth: .infinity, alignment: .center)
@@ -21,8 +21,11 @@ struct Futebol: View {
 					.preferredColorScheme(.dark)
 			}
 			Text("Futebol")
-				.font(.title3)
-			Spacer()
+				.font(.system(size: 24))
+				.padding(.bottom, 60)
+				.padding(.top, 20)
+				.fontWeight(.semibold)
+			
 			BotaoLigas(icone: "globe.americas.fill", titulo: "Copa do Mundo 2026") { Jogos() }
 			BotaoLigas(icone: "trophy", titulo: "Ligas e Torneios") { Jogos() }
 			BotaoLigas(icone: "shield", titulo: "Times") { Jogos() }

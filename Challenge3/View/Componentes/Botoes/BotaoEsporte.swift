@@ -11,9 +11,10 @@ struct BotaoEsporte<Destino: View>: View {
 	
 	let titulo: String
 	let icone: String
+	let cor: Color
 	let destino: () -> Destino
 	
-	
+		
 	var body: some View {
 		NavigationLink{
 			destino()
@@ -23,10 +24,10 @@ struct BotaoEsporte<Destino: View>: View {
 				ZStack {
 					Circle()
 						.frame(maxWidth: 90, maxHeight: 90)
-						.foregroundStyle(.corBotaoEsporte)
+						.foregroundStyle(cor)
 					Image(systemName: icone)
 						.font(.system(size: 40))
-						.foregroundStyle(.white)
+						.foregroundStyle(.black)
 				}
 				Text(titulo)
 					.font(.system(size: 14))
@@ -40,5 +41,5 @@ struct BotaoEsporte<Destino: View>: View {
 	}
 }
 #Preview {
-	BotaoEsporte(titulo: "Futebol", icone: "football") { Futebol() }
+	BotaoEsporte(titulo: "Futebol", icone: "football", cor: .red) { Futebol() }
 }

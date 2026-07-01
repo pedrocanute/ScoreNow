@@ -33,8 +33,8 @@ struct BotaoLigas<Destino: View>:View {
 					
 					Text(titulo)
 						.padding(.leading, 20)
-						.font(.title3)
-						.fontWeight(.light)
+						.font(.system(size:18))
+						.fontWeight(.regular)
 				}
 				.frame(maxWidth: .infinity, alignment: .leading)
 				.padding(.leading, 35)

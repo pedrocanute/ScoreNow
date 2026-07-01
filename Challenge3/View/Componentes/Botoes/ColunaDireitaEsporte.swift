@@ -10,11 +10,11 @@ import SwiftUI
 struct ColunaDireitaEsporte: View {
 	var body: some View {
 		VStack (spacing: 20){
-			BotaoEsporte(titulo: "Corrida", icone: "flag.pattern.checkered") { Futebol () }
-			BotaoEsporte(titulo: "MMA", icone: "figure.wrestling") { Futebol() }
+			BotaoEsporte(titulo: "Corrida", icone: "flag.pattern.checkered", cor: .corBasquete) { Futebol () }
+			BotaoEsporte(titulo: "MMA", icone: "figure.wrestling", cor: .corMMA) { Futebol() }
 				.preferredColorScheme(.dark)
-			BotaoEsporte(titulo: "Tênis", icone: "tennisball") { Futebol() }
-			BotaoEsporte(titulo: "Baseball", icone: "baseball") { Futebol() }
+			BotaoEsporte(titulo: "Tênis", icone: "tennisball", cor: .corTenis) { Futebol() }
+			BotaoEsporte(titulo: "Baseball", icone: "baseball", cor: .corMMA) { Futebol() }
 			
 		}
 	}
