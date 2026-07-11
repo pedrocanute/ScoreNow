@@ -12,7 +12,17 @@ struct Escalacao: View {
 			Color.corFundo
 				.ignoresSafeArea()
 			VStack{
-				Image("campo")
+				ZStack{
+					Image("campo")
+					HStack(spacing: 10){
+						Jogador(nomeJogador: "G. Magalhães", numeroCamisa: "10", corFundo: .corVerdeBrasil)
+						Jogador(nomeJogador: "G. Magalhães", numeroCamisa: "3", corFundo: .corVerdeBrasil)
+						Jogador(nomeJogador: "G. Magalhães", numeroCamisa: "7", corFundo: .corVerdeBrasil)
+						Jogador(nomeJogador: "G. Magalhães", numeroCamisa: "19", corFundo: .corVerdeBrasil)
+						
+					}
+					
+				}
 					
 			}
 		}
