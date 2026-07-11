@@ -34,22 +34,25 @@ struct Copa: View {
 					
 					SubCategoria(titulo: "Ao Vivo")
 					
-					CardJogos(aoVivo: true, titulo: "Dezesseis avos de final", paisEsquerda: "Brasil", paisDireita: "Japão"){ Copa()}
+					CardJogos(titulo: "Dezesseis avos de final", aoVivo: true, paisEsquerda: "Brasil", paisDireita: "Japão"){ Estatistica()}
 						.padding(.horizontal, 24)
 					
 					SubCategoria(titulo: "Ainda hoje")
 					
-					CardJogos(aoVivo: false, titulo: "Dezesseis avos de final", paisEsquerda: "Espanha", paisDireita: "Áustria"){ Copa()}
+					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Espanha", paisDireita: "Áustria"){ Copa()}
 						.padding(.horizontal, 24)
-					CardJogos(aoVivo: false, titulo: "Dezesseis avos de final", paisEsquerda: "Portugal", paisDireita: "Croácia", horario: "20:00"){ Copa()}
+					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Portugal", paisDireita: "Croácia", horario: "20:00"){ Copa()}
 						.padding(.horizontal, 24)
 					
 					SubCategoria(titulo: "Amanhã")
 					
-					CardJogos(aoVivo: false, titulo: "Dezesseis avos de final", paisEsquerda: "Costa do Marfim", paisDireita: "Noruega", horario: "14:00"){ Copa()}
+					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Costa do Marfim", paisDireita: "Noruega", horario: "14:00"){ Copa()}
 						.padding(.horizontal, 24)
 					
-					CardJogos(aoVivo: false, titulo: "Dezesseis avos de final", paisEsquerda: "México", paisDireita: "Equador", horario: "20:00"){ Copa()}
+					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "França", paisDireita: "Suécia", horario: "16:00"){ Copa()}
+						.padding(.horizontal, 24)
+					
+					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "México", paisDireita: "Equador", horario: "20:00"){ Copa()}
 						.padding(.horizontal, 24)
 				}
 			}

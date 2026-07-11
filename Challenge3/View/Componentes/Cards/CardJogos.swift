@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct CardJogos<Destino: View>:View {
-	var aoVivo: Bool = false
+	
 	let titulo: String
+	let aoVivo: Bool
 	let paisEsquerda: String
 	let paisDireita: String
 	var horario: String = "16:00"
+	
 	let destino: () -> Destino
 	
 	@State var ativarHaptic = false
@@ -29,38 +31,8 @@ struct CardJogos<Destino: View>:View {
 						.foregroundStyle(.corSubtitulo)
 						.padding(.top, 8)
 					
-					HStack(spacing: 15){
-						Bandeira(nomeSelecao: paisEsquerda)
-						Divider()
-							.frame(width: 1, height: 90)
-							.background(.corLinha)
-						Group {
-							
-							if aoVivo {
-								
-								VStack{
-									Text("2 x 1")
-										.font(.largeTitle)
-										.fontWeight(.heavy)
-										.foregroundStyle(.white)
-									Relogio(segundosIniciais: 1542)
-									
-								}
-							} else {
-								Text(horario)
-									.foregroundStyle(.white)
-								
-							}
-						}
-						.frame(width: 90, height: 90)
-						
-						Divider()
-							.frame(width: 1, height: 90)
-							.background(.corLinha)
-						Bandeira(nomeSelecao: paisDireita)
-						
-					}
-					.padding(.vertical, 5)
+					DadoPartida(aoVivo: aoVivo, paisEsquerda: paisEsquerda, paisDireita: paisDireita, horario: horario)
+					
 				}
 				.frame(maxWidth: .infinity)
 				Image(systemName: "chevron.compact.right")
@@ -85,5 +57,5 @@ struct CardJogos<Destino: View>:View {
 	}
 }
 #Preview {
-	CardJogos(aoVivo: true, titulo: "Dezesseis avos de final", paisEsquerda: "Costa do Marfim", paisDireita: "Japão", horario: "20:00") { Copa()}
+	CardJogos(titulo: "Dezesseis avos de final", aoVivo: true, paisEsquerda: "Brasil", paisDireita: "Japão") { Copa()}
 }
