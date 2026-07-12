@@ -11,10 +11,10 @@ struct ColunaCentroEsporte: View {
 	var body: some View {
 		VStack (spacing: 20){
 			BotaoEsporte(titulo: "Futebol", icone: "soccerball.inverse", cor: .corFutebol) { Futebol () }
-			BotaoEsporte(titulo: "Futebol Americano", icone: "american.football", cor: .corRugbi) { Futebol() }
-				.preferredColorScheme(.dark)
-			BotaoEsporte(titulo: "Golfe", icone: "figure.golf", cor: .corFutebol) { Futebol() }
-			BotaoEsporte(titulo: "Surf", icone: "figure.surfing", cor: .corSurf) { Futebol() }
+			BotaoEsporte(titulo: "Futebol Americano", icone: "american.football", cor: .corRugbi) { Construcao() }
+				
+			BotaoEsporte(titulo: "Golfe", icone: "figure.golf", cor: .corFutebol) { Construcao() }
+			BotaoEsporte(titulo: "Surf", icone: "figure.surfing", cor: .corSurf) { Construcao() }
 			
 		}
 	}

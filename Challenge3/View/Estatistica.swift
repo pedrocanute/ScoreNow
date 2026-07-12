@@ -8,43 +8,50 @@
 import SwiftUI
 
 struct Estatistica: View {
-	
+
 	@State var selecao = 0
-	
+	@Environment(\.dynamicTypeSize) var dynamicTypeSize
+
 	var body: some View {
-		ZStack{
+		ZStack {
 			Color.corFundo
 				.ignoresSafeArea()
-			
+
 			ScrollView {
-				VStack(spacing: 20){
-					
+				VStack(spacing: dynamicTypeSize.isAccessibilitySize ? 28 : 20) {
+
 					Text("Ao Vivo")
 						.font(.custom("Play-Bold", size: 28, relativeTo: .title))
 						.frame(maxWidth: .infinity, alignment: .leading)
-						.padding(.leading, 24)
-					
+						.accessibilityAddTraits(.isHeader)
+
 					BotaoComInfo(paisEsquerda: "Brasil", paisDireita: "Japão")
-					Picker("Dados", selection: $selecao) {
+
+					Picker("Dados da partida", selection: $selecao) {
 						Text("Resumo")
 							.tag(0)
+
 						Text("Escalação")
 							.tag(1)
 					}
 					.pickerStyle(.segmented)
-					.frame(width: 302)
-					
+					.frame(maxWidth: dynamicTypeSize.isAccessibilitySize ? .infinity : 302)
+
 					Group {
 						switch selecao {
 						case 0:
 							ResumoPartida()
+
 						case 1:
 							Escalacao()
+
 						default:
 							ResumoPartida()
 						}
 					}
 				}
+				.padding(.horizontal, 24)
+				.padding(.vertical, 20)
 			}
 			.scrollEdgeEffectStyle(.soft, for: .top)
 		}
