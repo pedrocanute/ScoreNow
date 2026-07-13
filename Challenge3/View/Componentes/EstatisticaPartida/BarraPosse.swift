@@ -9,96 +9,101 @@ import SwiftUI
 
 struct BarraPosse: View {
 
-	let posseDeBola: CGFloat
+	@Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
-	@Environment(\.dynamicTypeSize) var dynamicTypeSize
-
-	var posseDireita: CGFloat {
-		100 - posseDeBola
-	}
+	private let posseBrasil = 69.0
+	private let posseJapao = 31.0
 
 	var body: some View {
 		Group {
 			if dynamicTypeSize.isAccessibilitySize {
 				layoutAcessivel
 			} else {
-				layoutPadrao
+				barra
 			}
 		}
 		.accessibilityElement(children: .ignore)
-		.accessibilityLabel("Posse de bola. Brasil: \(Int(posseDeBola)) por cento. Japão: \(Int(posseDireita)) por cento.")
+		.accessibilityLabel(
+			"Posse de bola. Brasil: 69 por cento. Japão: 31 por cento."
+		)
 	}
 
-	var layoutPadrao: some View {
-		GeometryReader { geometry in
-			let larguraTotal = geometry.size.width
-			let larguraBrasil = larguraTotal * (posseDeBola / 100)
-
-			ZStack {
-				Capsule()
-					.fill(.corVermelhoJapao)
-					.stroke(.corFundo, lineWidth: 4)
-
-				HStack(spacing: 0) {
+	private var barra: some View {
+		ZStack {
+			Capsule()
+				.fill(.corVermelhoJapao)
+				.stroke(.corFundo, lineWidth: 4)
+				.overlay(alignment: .leading){
 					Capsule()
 						.fill(.corVerdeBrasil)
 						.stroke(.corFundo, lineWidth: 4)
-						.frame(width: larguraBrasil)
-
-					Spacer(minLength: 0)
+						.frame(width: 255)
+						
 				}
 
-				HStack {
-					Text("\(Int(posseDeBola))%")
-						.font(.title3)
-					Spacer()
+			HStack {
+				Text("69%")
+					.font(.title3)
 
-					Text("Posse de Bola")
-						.font(.subheadline)
+				Spacer()
 
-					Spacer()
+				Text("Posse de Bola")
+					.font(.subheadline)
 
-					Text("\(Int(posseDireita))%")
-						.font(.title3)
-				}
-				.foregroundStyle(.white)
-				.padding(.horizontal, 16)
+				Spacer()
+
+				Text("31%")
+					.font(.title3)
 			}
+			.foregroundStyle(.white)
+			.padding(.horizontal, 14)
 		}
 		.frame(height: 45)
 	}
 
-	var layoutAcessivel: some View {
+	private var layoutAcessivel: some View {
 		VStack(alignment: .leading, spacing: 12) {
 			Text("Posse de bola")
 				.font(.headline)
-				.foregroundStyle(.white)
 
-			valorPosse(pais: "Brasil", valor: posseDeBola, cor: .corVerdeBrasil)
+			valorPosse(
+				pais: "Brasil",
+				valor: posseBrasil,
+				cor: .corVerdeBrasil
+			)
 
-			valorPosse(pais: "Japão", valor: posseDireita,cor: .corVermelhoJapao)
+			valorPosse(
+				pais: "Japão",
+				valor: posseJapao,
+				cor: .corVermelhoJapao
+			)
 		}
-		.frame(maxWidth: .infinity, alignment: .leading)
+		.foregroundStyle(.white)
 	}
 
-	func valorPosse(pais: String, valor: CGFloat,cor: Color) -> some View {
+	private func valorPosse(
+		pais: String,
+		valor: Double,
+		cor: Color
+	) -> some View {
 		VStack(alignment: .leading, spacing: 8) {
 			HStack {
 				Text(pais)
-					.font(.body)
 
 				Spacer()
 
 				Text("\(Int(valor))%")
 					.font(.headline)
 			}
-			.foregroundStyle(.white)
 
 			ProgressView(value: valor, total: 100)
 				.tint(cor)
 		}
 	}
 }
+
 #Preview {
-	BarraPosse(posseDeBola: 69)
+	BarraPosse()
+		.padding()
+		.background(.corFundo)
 }

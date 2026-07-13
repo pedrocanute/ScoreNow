@@ -25,6 +25,11 @@ struct BotaoLigas<Destino: View>:View {
 					.frame(width: 354, height: 80)
 					.cornerRadius(35)
 					.preferredColorScheme(.dark)
+					.overlay(alignment: .trailing){
+						Image(systemName: "chevron.compact.right")
+							.padding(.trailing)
+							.foregroundStyle(.corLinha)
+					}
 				HStack{
 					ZStack{
 						Circle()
@@ -40,6 +45,7 @@ struct BotaoLigas<Destino: View>:View {
 						.padding(.leading, 20)
 						.font(.system(size:18))
 						.fontWeight(.regular)
+					
 				}
 				.frame(maxWidth: .infinity, alignment: .leading)
 				.padding(.leading, 35)

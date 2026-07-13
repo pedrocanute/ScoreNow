@@ -10,25 +10,26 @@ import Playgrounds
 }
 
 struct ContentView: View {
+	
     var body: some View {
         TabView {
-			Tab ("Esportes", systemImage: "soccerball.inverse") {
+			Tab ("Esportes", image: "bola") {
 				NavigationStack{
 					Esportes()
 				}
 			}
-			Tab ("Favoritos", systemImage: "star") {
+			Tab ("Favoritos", image: "favoritos") {
 				Favoritos()
 			}
-			Tab ("Notícias", systemImage: "newspaper") {
+			Tab ("Notícias", image: "news") {
 				Noticias()
 			}
-			Tab ("Perfil", systemImage: "person"){
+			Tab ("Perfil", image: "perfil"){
 				Perfil()
 			}
         }
 		.tint(.corFutebol)
-		.preferredColorScheme(.dark)
+		
 		
     }
 }

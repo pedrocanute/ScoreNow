@@ -17,7 +17,7 @@ struct ResumoPartida: View {
 			
 			SubCategoria(titulo: "Estatísticas da Partida", ehSubtitulo: false)
 			
-			BarraPosse(posseDeBola: 69)
+			BarraPosse()
 			Group {
 				
 				LinhaEstatistica(dadoEsquerdo: "51%", titulo: "Prec. de passes", dadoDireito: "49%")
@@ -34,7 +34,7 @@ struct ResumoPartida: View {
 				
 				LinhaEstatistica(dadoEsquerdo: "2", titulo: "Cartões amarelos", dadoDireito: "3")
 			}
-			.padding(.horizontal,15)
+			.padding(.horizontal,2)
 		}
 	}
 }

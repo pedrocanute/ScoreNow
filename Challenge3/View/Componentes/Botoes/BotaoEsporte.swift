@@ -44,7 +44,7 @@ struct BotaoEsporte<Destino: View>: View {
 	var layoutPadrao: some View {
 		
 		VStack(spacing: 8) {
-			iconeEsporte(tamanho: 90, tamanhoIcone: 40)
+			iconeEsporte(tamanho: 90, tamanhoIcone: 45)
 
 			Text(titulo)
 				.font(.custom("Play-Regular",size: 14, relativeTo: .body))
@@ -77,7 +77,7 @@ struct BotaoEsporte<Destino: View>: View {
 
 			Spacer(minLength: 8)
 
-			Image(systemName: "chevron.right")
+			Image(systemName: "chevron.compact.right")
 				.font(.body.bold())
 				.foregroundStyle(.corLinha)
 				.accessibilityHidden(true)
@@ -93,8 +93,10 @@ struct BotaoEsporte<Destino: View>: View {
 			Circle()
 				.foregroundStyle(cor)
 
-			Image(systemName: icone)
-				.font(.system(size: tamanhoIcone))
+			Image(icone)
+				.resizable()
+				.scaledToFit()
+				.frame(width: tamanhoIcone, height: tamanhoIcone)
 				.foregroundStyle(.corFundo)
 				.accessibilityHidden(true)
 		}
@@ -104,5 +106,5 @@ struct BotaoEsporte<Destino: View>: View {
 }
 
 #Preview {
-	BotaoEsporte(titulo: "Futebol", icone: "soccerball.inverse", cor: .corFutebol) { Futebol() }
+	BotaoEsporte(titulo: "Futebol", icone: "Futebol", cor: .corFutebol) { Futebol() }
 }

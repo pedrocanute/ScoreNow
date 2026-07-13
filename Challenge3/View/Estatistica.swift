@@ -20,10 +20,19 @@ struct Estatistica: View {
 			ScrollView {
 				VStack(spacing: dynamicTypeSize.isAccessibilitySize ? 28 : 20) {
 
-					Text("Ao Vivo")
-						.font(.custom("Play-Bold", size: 28, relativeTo: .title))
-						.frame(maxWidth: .infinity, alignment: .leading)
-						.accessibilityAddTraits(.isHeader)
+					VStack(spacing: 8){
+						
+						Text("Ao Vivo")
+							.font(.custom("Play-Bold", size: 28, relativeTo: .title))
+							.frame(maxWidth: .infinity, alignment: .leading)
+							.accessibilityAddTraits(.isHeader)
+						
+						Text("Dezesseis avos de final")
+							.font(.subheadline)
+							.foregroundStyle(.corSubtitulo)
+							.frame(maxWidth: .infinity, alignment: .leading)
+					}
+					.padding(.bottom,20)
 
 					BotaoComInfo(paisEsquerda: "Brasil", paisDireita: "Japão")
 

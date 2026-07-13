@@ -51,6 +51,7 @@ struct LinhaEstatistica: View {
 				.frame(width: 60, alignment: .trailing)
 		}
 		.foregroundStyle(.white)
+		.padding(.horizontal,15)
 	}
 
 	var layoutAcessivel: some View {

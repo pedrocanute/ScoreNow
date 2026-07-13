@@ -10,11 +10,11 @@ import SwiftUI
 struct ColunaCentroEsporte: View {
 	var body: some View {
 		VStack (spacing: 20){
-			BotaoEsporte(titulo: "Futebol", icone: "soccerball.inverse", cor: .corFutebol) { Futebol () }
-			BotaoEsporte(titulo: "Futebol Americano", icone: "american.football", cor: .corRugbi) { Construcao() }
+			BotaoEsporte(titulo: "Futebol", icone: "Futebol", cor: .corFutebol) { Futebol () }
+			BotaoEsporte(titulo: "Futebol Americano", icone: "Americano", cor: .corRugbi) { Construcao() }
 				
-			BotaoEsporte(titulo: "Golfe", icone: "figure.golf", cor: .corFutebol) { Construcao() }
-			BotaoEsporte(titulo: "Surf", icone: "figure.surfing", cor: .corSurf) { Construcao() }
+			BotaoEsporte(titulo: "Golfe", icone: "Golf", cor: .corFutebol) { Construcao() }
+			BotaoEsporte(titulo: "Surf", icone: "Surf", cor: .corSurf) { Construcao() }
 			
 		}
 	}
