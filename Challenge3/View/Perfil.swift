@@ -14,12 +14,6 @@ struct Perfil: View {
 				.ignoresSafeArea()
 			VStack{
 				
-				Text("Esta tela ainda está em desenvolvimento")
-					.font(.custom("Play-Bold", size: 20, relativeTo: .title))
-					.frame(width: 250)
-					.multilineTextAlignment(.center)
-					.lineLimit(2)
-					.padding(.bottom, 40)
 				Image(systemName: "wrench.and.screwdriver")
 					.font(.largeTitle)
 					.foregroundStyle(.corFundo)
@@ -28,6 +22,13 @@ struct Perfil: View {
 							.foregroundStyle(.corFutebol)
 							.frame(width: 100, height: 100)
 					)
+					.padding(.bottom, 40)
+				
+				Text("Esta tela ainda está em desenvolvimento.")
+					.font(.title3)
+					.frame(width: 250)
+					.multilineTextAlignment(.center)
+					.lineLimit(2)
 					.padding(.bottom, 40)
 			}
 		}
