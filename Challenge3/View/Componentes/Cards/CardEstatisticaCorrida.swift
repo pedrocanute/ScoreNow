@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardEstatisticaCorrida: View {
 
-	
+	let tamanhoFundoCard: CGFloat = 10
 	@Environment(\.dynamicTypeSize) private var dynamicTypeSize
 	
 	let pilotos: [InfoPiloto] = [
@@ -48,7 +48,7 @@ struct CardEstatisticaCorrida: View {
 				cardPadrao
 			}
 		}
-		.padding(18)
+		.padding(tamanhoFundoCard)
 		.frame(maxWidth: .infinity)
 		.background(.corCard)
 		.clipShape(RoundedRectangle(cornerRadius: 20))
