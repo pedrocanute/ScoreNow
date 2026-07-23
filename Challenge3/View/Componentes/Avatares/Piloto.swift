@@ -93,7 +93,8 @@ struct Piloto: View {
 					.cornerRadius(58)
 				Text(nomePiloto)
 					.font(.subheadline)
-					.foregroundStyle(.white)
+					.lineLimit(1)
+					.layoutPriority(1)
 			}
 		}
 	}

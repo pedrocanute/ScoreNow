@@ -10,7 +10,7 @@ import SwiftUI
 struct CardEstatisticaCorrida: View {
 
 	let tamanhoFundoCard: CGFloat = 10
-	@Environment(\.dynamicTypeSize) private var dynamicTypeSize
+	@Environment(\.dynamicTypeSize) var dynamicTypeSize
 	
 	let pilotos: [InfoPiloto] = [
 		
@@ -90,32 +90,8 @@ struct CardEstatisticaCorrida: View {
 			SubCategoria(titulo: "Classificação do Campeonato", ehSubtitulo: false)
 				.padding(.bottom, 10)
 			
-			ZStack(alignment: .top) {
-				VStack(spacing: 8) {
-					Color.clear
-					
-					ForEach(Array(pilotos.enumerated()), id: \.element.id) { indice, _ in
-						RoundedRectangle(cornerRadius: 7)
-							.fill(indice.isMultiple(of: 2) ? Color.clear : Color.corBotaoFavoritar.opacity(0.1))
-							.frame(height: 45)
-					}
-				}
-				
-				HStack(alignment: .top) {
-					ColunaPiloto(pilotos: pilotos)
-						.frame(width: 160, alignment: .leading)
-					
-					ColunaConstrutor(pilotos: pilotos)
-						.frame(width: 80, alignment: .trailing)
-					
-					ColunaV(pilotos: pilotos)
-						.frame(width: 30, alignment: .center)
-					
-					ColunaPTS(pilotos: pilotos)
-						.frame(width: 30, alignment: .trailing)
-				}
-				.padding(.horizontal, 8)
-			}
+				TabelaPilotos(pilotos: pilotos)
+
 		}
 	}
 	

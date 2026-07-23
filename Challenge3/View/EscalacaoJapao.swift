@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct EscalacaoJapao: View {
 
 	@Environment(\.dynamicTypeSize) var dynamicTypeSize
